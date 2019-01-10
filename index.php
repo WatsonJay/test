@@ -192,15 +192,15 @@
         </ul>
     </div>
     <div class="blog">
-        <figure> <a href="/"><img src="images/t01.jpg"></a>
+        <figure> <a href="/"><img src="<?php bloginfo('template_url');?>/images/t01.jpg"></a>
             <p><a href="/">愿有人陪你一起颠沛流离</a></p>
             <figcaption>有一天晚上我收到朋友的邮件，他问我怎样可以最快地摆脱寂寞，我想了想不知道应该怎么回答他，因为我从来没有摆脱过这个问题，我只能去习惯它，就像习惯身体的一部分。</figcaption>
         </figure>
-        <figure> <a href="/"><img src="images/t02.jpg"></a>
+        <figure> <a href="/"><img src="<?php bloginfo('template_url');?>/images/t02.jpg"></a>
             <p><a href="/">你要去相信，没有到不了的明天</a></p>
             <figcaption>不管你现在是一个人走在异乡的街道上始终没有找到一丝归属感，还是你在跟朋友们一起吃饭开心地笑着的时候闪过一丝落寞。</figcaption>
         </figure>
-        <figure> <a href="/"><img src="images/t03.jpg"></a>
+        <figure> <a href="/"><img src="<?php bloginfo('template_url');?>/images/t03.jpg"></a>
             <p><a href="/">美丽的茧</a></p>
             <figcaption>让世界拥有它的脚步，让我保有我的茧。当溃烂已极的心灵再不想做一丝一毫的思索时，就让我静静回到我的茧内，以回忆为睡榻，以悲哀为覆被，这是我唯一的美丽。</figcaption>
         </figure>
