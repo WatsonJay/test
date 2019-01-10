@@ -82,6 +82,7 @@ function register_mysettings() {
     register_setting( 'heart-settings', 'notice');
     register_setting( 'heart-settings', 'boyid');
     register_setting( 'heart-settings', 'girlid');
+    register_setting( 'heart-settings', 'show_cat');
     register_setting( 'heart-settings', 'lovepic');
     register_setting( 'heart-settings', 'lovetime');
     register_setting( 'heart-settings', 'beian');
@@ -171,6 +172,16 @@ function my_love_form(){
                         <br/>
                         <span style="color:#666;">请以[<span style="color:red">2011-01-01 00:00:00</span>]这种格式填写,不带"[]".</span>
                     </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="form-table">
+                <tbody>
+                <tr valign="top">
+                    <th scope="row">照片墙显示的分类：</th>
+                    <td>
+                        <input type="text" style="width:30em;" name="show_cat" value="<?php echo get_option('show_cat'); ?>" /></td>
                 </tr>
                 </tbody>
             </table>
@@ -275,6 +286,44 @@ function wpdx_paging_nav_girl($who,$pageOtherSide,$pageNow){
     echo $pagination_links_girl;
 }
 
+//END-----------------------------
+
+// 添加特色图像功能
+add_theme_support('post-thumbnails');
+set_post_thumbnail_size(300, 430, true); // 图片宽度与高度
+
+//END-----------------------------
+
+//注册小工具栏
+register_sidebar(array(
+    'name' => '位于页脚的小工具一',
+    'id' => 'footer-1',
+    'description' => '第一个小工具区域',
+    'before_widget' => '<div id="%1$s" class="%2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2>',
+    'after_title' => '</h2>',
+));
+
+register_sidebar(array(
+    'name' => '位于页脚的小工具二',
+    'id' => 'footer-2',
+    'description' => '第二个小工具区域',
+    'before_widget' => '<div id="%1$s" class="%2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2>',
+    'after_title' => '</h2>',
+));
+
+register_sidebar(array(
+    'name' => '位于页脚的小工具三',
+    'id' => 'footer-3',
+    'description' => '第三个小工具区域',
+    'before_widget' => '<div id="%1$s" class="%2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2>',
+    'after_title' => '</h2>',
+));
 //END-----------------------------
  ?>
 

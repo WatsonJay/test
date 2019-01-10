@@ -1,44 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head profile="http://gmpg.org/xfn/11">
+<?php get_header(); ?>
 
-    <title><?php bloginfo('name'); ?><?php wp_title(); ?></title>
-    <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-    <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats please -->
-
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
-    <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
-    <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-    <script src="<?php bloginfo('template_url'); ?>/js/myjs.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/modernizr.js"></script>
-    <?php wp_get_archives('type=monthly&format=link'); ?>
-    <?php //comments_popup_script(); // off by default?>
-</head>
-<body>
-<header>
-    <div class="quotes">
-        <p></p>
-        <div class="title-text">记录・回忆</div>
-        <div class="flower-boy">
-            <img src="<?php bloginfo('template_url');?>/images/flower.jpg">
-            <p><?php echo get_the_author_meta('display_name',get_option('boyid')); ?></p>
-        </div>
-        <div class="photo-text">&</div>
-        <div class="flower">
-            <img src="<?php bloginfo('template_url');?>/images/flower.jpg">
-            <p>小仙女</p>
-        </div>
-    </div>
-    <!--nav begin-->
-    <div id="nav">
-        <ul>
-            <?php echo str_replace("</ul></div>", "", preg_replace("{<div[^>]*><ul[^>]*>}", "", wp_nav_menu(array('theme_location' => 'nav', 'echo' => false)) )); ?>
-        </ul>
-    </div>
-    <!--nav end-->
-</header>
 <div class="main-content">
     <div class="photowall">
         <ul class="wall_a">
@@ -192,19 +153,67 @@
         </ul>
     </div>
     <div class="blog">
-        <figure> <a href="/"><img src="<?php bloginfo('template_url');?>/images/t01.jpg"></a>
-            <p><a href="/">愿有人陪你一起颠沛流离</a></p>
-            <figcaption>有一天晚上我收到朋友的邮件，他问我怎样可以最快地摆脱寂寞，我想了想不知道应该怎么回答他，因为我从来没有摆脱过这个问题，我只能去习惯它，就像习惯身体的一部分。</figcaption>
-        </figure>
-        <figure> <a href="/"><img src="<?php bloginfo('template_url');?>/images/t02.jpg"></a>
-            <p><a href="/">你要去相信，没有到不了的明天</a></p>
-            <figcaption>不管你现在是一个人走在异乡的街道上始终没有找到一丝归属感，还是你在跟朋友们一起吃饭开心地笑着的时候闪过一丝落寞。</figcaption>
-        </figure>
-        <figure> <a href="/"><img src="<?php bloginfo('template_url');?>/images/t03.jpg"></a>
-            <p><a href="/">美丽的茧</a></p>
-            <figcaption>让世界拥有它的脚步，让我保有我的茧。当溃烂已极的心灵再不想做一丝一毫的思索时，就让我静静回到我的茧内，以回忆为睡榻，以悲哀为覆被，这是我唯一的美丽。</figcaption>
-        </figure>
+        <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array(
+                'showposts' => 3,
+                'cat' => get_option('show_cat')
+            );
+            query_posts($args);?>
+        <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); $ashu_c++?>
+            <figure>
+                <a href="<?php the_permalink() ?>" rel="bookmark" title="阅读 <?php the_title_attribute(); ?>">
+                <?php
+                    if (has_post_thumbnail()) {
+                        // 显示特色图像
+                        the_post_thumbnail();
+                    } else {
+                        // 设置特色图像
+                        $attachments = get_posts(array(
+                            'post_type' => 'attachment',
+                            'post_mime_type'=>'image',
+                            'posts_per_page' => 0,
+                            'post_parent' => $post->ID,
+                            'order'=>'ASC'
+                        ));
+                        if ($attachments) {
+                            foreach ($attachments as $attachment) {
+                                set_post_thumbnail($post->ID, $attachment->ID);
+                                break;
+                            }
+                            // 显示特色图像
+                            the_post_thumbnail();
+                        }
+                    } ?>
+                </a>
+                <p>
+                    <a href="<?php the_permalink() ?>" rel="bookmark" title="阅读 <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                </p>
+                <figcaption><?php the_content("[阅读全文]");?></figcaption>
+            </figure>
+            <?php endwhile;
+            if ($ashu_c<3):
+                while ($ashu_c<3):$ashu_c++?>
+                         <figure> <a href=""><img src="<?php bloginfo('template_url');?>/images/t01.jpg"></a>
+                            <p><a href="">暂时没有文章，随便写写</a></p>
+                          <figcaption>这里还可以放一篇。</figcaption>
+                        </figure>
+                <?php endwhile;
+            endif;
+        else: ?>
+            <figure> <a href=""><img src="<?php bloginfo('template_url');?>/images/t01.jpg"></a>
+                <p><a href="">暂时没有文章，随便写写</a></p>
+                <figcaption>一个叫小肥仔的男孩。</figcaption>
+            </figure>
+            <figure> <a href=""><img src="<?php bloginfo('template_url');?>/images/t02.jpg"></a>
+                <p><a href="">暂时没有文章，随便写写</a></p>
+                <figcaption>非常爱着。</figcaption>
+            </figure>
+            <figure> <a href=""><img src="<?php bloginfo('template_url');?>/images/t03.jpg"></a>
+                <p><a href="">暂时没有文章，随便写写</a></p>
+                <figcaption>那个像仙女一样叫做霄霄的女孩。</figcaption>
+            </figure>
+        <?php endif; ?>
     </div>
 </div>
-</body>
-</html>
+
+<?php get_footer(); ?>

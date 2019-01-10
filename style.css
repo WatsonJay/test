@@ -9,11 +9,11 @@ body { font-size: 12px; background: #226039 url(images/together.png) center 0 sc
 /* header */
 header { width: 100%; margin: auto; border-bottom: #3c7a48 1px solid }
 .quotes { width: 1000px; height: 140px; position: relative; margin: 60px auto 120px auto; }
-.quotes p { text-shadow: #246640 1px 1px 1px; color: #fff; width: 330px; line-height: 26px; }
+.quotes p { text-shadow: #246640 1px 1px 1px; color: #fff; width: 330px; line-height: 26px;}
 .title-text { position: absolute; left: 42%; top: 20px; font-family: "微软雅黑"; font-size: 30px; color: #FFF; -webkit-box-reflect: below -3px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(white)); }/* below文字倒影方向向下，距离3px 颜色渐变由上往下 */
 .flower { position: absolute; right: 30%; top: 110px; background: url(images/flower.png) no-repeat; width: 173px; height: 175px; z-index: 2 }
 .flower img { margin: 15px 0 0 17px; display: block; width:100px ; height: 80px;}
-.flower p { margin: 5px 0 0 20px; display: block; width:100px ; height: 80px; font-family: "微软雅黑"; font-size: 20px;color: #444444;}
+.flower p { margin: 5px 0 0 20px; display: block; width:100px ; height: 80px; font-family: "微软雅黑"; font-size: 20px;color: #444444;text-align:center}
 .photo-text { position: absolute; left: 48.5%; top: 160px; font-family: "微软雅黑"; font-size: 30px; color: #FFF; -webkit-box-reflect: below -3px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(white)); }/* below文字倒影方向向下，距离3px 颜色渐变由上往下 */
 .flower-boy { position: absolute; left: 33%; top: 110px; background: url(images/flower.png) no-repeat; width: 173px; height: 175px; z-index: 2 }
 .flower-boy img { margin: 15px 0 0 17px; display: block; width:100px ; height: 80px;}
@@ -63,7 +63,43 @@ header { width: 100%; margin: auto; border-bottom: #3c7a48 1px solid }
 .entry-girl ul li {list-style:disc;}
 .entry-girl img	{max-width:380px;height:auto;width:expression(this.width > 380 ? "380px" : this.width); /**用来在IE中自动缩放这里用来缩小首页面的图片的。**/}
 
+/* paged */
 .nav-blue{overflow:hidden;width:100%;text-align:center;vertical-align:bottom}
 .nav-blue a{height:36px;border:1px solid #DDD;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;color:#888;text-decoration:none;line-height:36px;margin:2px;padding:3px 8px}
 .nav-blue span{height:36px;border:1px solid #226039;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;color:#559664;text-decoration:none;line-height:36px;margin:2px;padding:3px 8px}
 .nav-blue a:hover,.nav-blue a.current{border:1px solid #FFBB76;color:#FF7200;font-weight:bolder}
+
+/* blog */
+.blog{ width:1000px; margin: 30px auto; overflow:hidden}
+.blog figure{ background:#ececec; border:#FFF 10px solid; width:300px; height:430px; float:left;margin: 0 5px;}
+.blog figure img{ display:block; margin: 0 auto 20px}
+.blog figure p{ font-size:14px;  text-shadow: #fff 1px 1px 0px; line-height:26px; text-align:center; font-weight:bold}
+.blog figure p a{color:#226039;}
+.blog figure figcaption{ padding:10px; line-height:22px; color:#666}
+
+/*tool*/
+.tool{ border-top:50px #559664 solid; padding:20px; color:#FFF; font-family: "微软雅黑"; font-size: 16px;}
+.footer-widgets { width: 100%; padding: 20px 0; overflow: hidden;}
+.footer-widgets ul{ width: 1000px; margin: auto; line-height: 30px }
+
+/*widget*/
+.widget_archive,.widget_categories,.widget_meta, .widget_nav_menu, .widget_pages, .widget_recent_comments, .widget_recent_entries,.widget_rss {width: 333px; float: left;}
+a{color:#FFF;}
+a:hover, a.current{border:1px solid #FFBB76;color:#559664;font-weight:bolder}
+.widget_archive,.widget_categories,.widget_meta, .widget_nav_menu, .widget_pages, .widget_recent_comments, .widget_recent_entries, .widget_rss h2{ color:#d2ec40; font-size:16px; font-weight:bold}
+.widget_calendar .calendar_wrap {width: 333px; float: left;}
+.widget_calendar .calendar_wrap a{color:#559765;}
+.widget_calendar .calendar_wrap table{margin: auto;}
+.widget_calendar .calendar_wrap caption{ color:#d2ec40; font-size:14px; font-weight:bold}
+.widget_calendar .calendar_wrap tr{border-bottom:#fff solid 1px;}
+.widget_calendar .calendar_wrap td{width: 30px}
+.widget_search {width: 333px; float: left;}
+.widget_search h2{ color:#d2ec40; font-size:20px; font-weight:bold}
+.widget_search input[type="text"]{height:36px;border:1px solid #226039;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;color:#559664;text-decoration:none;line-height:36px;margin:2px;padding:3px 8px}
+.widget_search input[type="submit"]{height:44px;border:1px solid #226039;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;color:#559664;text-decoration:none;line-height:36px;margin:2px;padding:3px 8px}
+
+/*footer*/
+footer{ background:#032e13; height:56px; line-height:56px;}
+footer p{ width:1000px; margin:auto; text-align:center;color:#559664 }
+footer p a{color:#559664}
+footer p a:hover{ text-decoration:underline}
