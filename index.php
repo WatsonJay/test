@@ -93,9 +93,11 @@
                                 <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="阅读 <?php the_title_attribute(); ?>">
                                     <?php the_title(); ?>
                                 </a></h2>
-                                <?php if($ashu_i==1):?>
-                                    <?php the_excerpt();?>
-                                <?php endif;?>
+                                <?php if($ashu_i==1):
+                                    the_content("[阅读全文]");
+                                else:
+                                    the_excerpt();
+                                endif;?>
                                 By
                                 <?php the_author_posts_link(); ?>
                                 | 分类:
@@ -149,9 +151,11 @@
                                 <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="阅读 <?php the_title_attribute(); ?>">
                                         <?php the_title(); ?>
                                     </a></h2>
-                                <?php if($ashu_b==1):?>
-                                    <?php  the_excerpt();?>
-                                <?php endif;?>
+                                <?php if($ashu_b==1):
+                                    the_content("[阅读全文]");
+                                else:
+                                    the_excerpt();
+                                endif;?>
                                 By
                                 <?php the_author_posts_link(); ?>
                                 | 分类:
