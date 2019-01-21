@@ -185,31 +185,31 @@
                         }
                     } ?>
                 </a>
-                <p>
+                <h3>
                     <a href="<?php the_permalink() ?>" rel="bookmark" title="阅读 <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                </p>
+                </h3>
                 <figcaption><?php the_content("[阅读全文]");?></figcaption>
             </figure>
             <?php endwhile;
             if ($ashu_c<3):
                 while ($ashu_c<3):$ashu_c++?>
                          <figure> <a href=""><img src="<?php bloginfo('template_url');?>/images/t01.jpg"></a>
-                            <p><a href="">暂时没有文章，随便写写</a></p>
+                            <h3><a href="">暂时没有文章，随便写写</a></h3>
                           <figcaption>这里还可以放一篇。</figcaption>
                         </figure>
                 <?php endwhile;
             endif;
         else: ?>
             <figure> <a href=""><img src="<?php bloginfo('template_url');?>/images/t01.jpg"></a>
-                <p><a href="">暂时没有文章，随便写写</a></p>
+                <h3><a href="">暂时没有文章，随便写写</a></h3>
                 <figcaption>一个叫小肥仔的男孩。</figcaption>
             </figure>
             <figure> <a href=""><img src="<?php bloginfo('template_url');?>/images/t02.jpg"></a>
-                <p><a href="">暂时没有文章，随便写写</a></p>
+                <h3><a href="">暂时没有文章，随便写写</a></h3>
                 <figcaption>非常爱着。</figcaption>
             </figure>
             <figure> <a href=""><img src="<?php bloginfo('template_url');?>/images/t03.jpg"></a>
-                <p><a href="">暂时没有文章，随便写写</a></p>
+                <h3><a href="">暂时没有文章，随便写写</a></h3>
                 <figcaption>那个像仙女一样叫做霄霄的女孩。</figcaption>
             </figure>
         <?php endif; ?>

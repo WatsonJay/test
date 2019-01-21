@@ -73,8 +73,8 @@ header { width: 100%; margin: auto; border-bottom: #3c7a48 1px solid }
 .blog{ width:1000px; margin: 30px auto; overflow:hidden}
 .blog figure{ background:#ececec; border:#FFF 10px solid; width:300px; height:430px; float:left;margin: 0 5px;}
 .blog figure img{ display:block; margin: 0 auto 20px}
-.blog figure p{ font-size:14px;  text-shadow: #fff 1px 1px 0px; line-height:26px; text-align:center; font-weight:bold}
-.blog figure p a{color:#226039;}
+.blog figure h3{ font-size:14px;  text-shadow: #fff 1px 1px 0px; line-height:26px; text-align:center; font-weight:bold}
+.blog figure h3 a{color:#226039;}
 .blog figure figcaption{ padding:10px; line-height:22px; color:#666}
 
 /*tool*/
@@ -103,3 +103,14 @@ footer{ background:#032e13; height:56px; line-height:56px;}
 footer p{ width:1000px; margin:auto; text-align:center;color:#559664 }
 footer p a{color:#559664}
 footer p a:hover{ text-decoration:underline}
+
+/*single*/
+.single_content { width: 100%; background: #559664; padding: 20px 0; overflow: hidden; min-height:472px }
+.single_content ul { width: 1000px; margin: auto; line-height: 24px }
+.single_entry {width: 60%; margin: 5px; background: #fff; color: #FFF; float: left; padding: 20px; border-radius: 6px; position: relative; box-shadow: inset #226039 -1px -1px 1px; text-shadow: #226039 1px 1px 0px }
+.single_entry p {margin-bottom:10px;}
+.single_entry ol {padding-left:15px;margin-bottom:15px;}
+.single_entry ol li {list-style:decimal;}
+.single_entry ul {padding-left:15px;margin-bottom:15px;}
+.single_entry ul li {list-style:disc;}
+.single_entry img	{max-width:380px;height:auto;width:expression(this.width > 380 ? "380px" : this.width); /**用来在IE中自动缩放这里用来缩小首页面的图片的。**/}
