@@ -188,7 +188,7 @@
                 <h3>
                     <a href="<?php the_permalink() ?>" rel="bookmark" title="阅读 <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                 </h3>
-                <figcaption><?php the_content("[阅读全文]");?></figcaption>
+                <figcaption><?php the_excerpt("[阅读全文]");?></figcaption>
             </figure>
             <?php endwhile;
             if ($ashu_c<3):

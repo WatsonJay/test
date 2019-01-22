@@ -1,6 +1,6 @@
 @charset "gb2312";
 /* CSS Document */
-* { margin: 0; padding: 0 }
+* { margin: 0; padding: 0 ; word-wrap:break-word;}
 a:link, a:visited { text-decoration: none; }
 ul, li { list-style-type: none }
 img { border: 0; }
@@ -82,22 +82,6 @@ header { width: 100%; margin: auto; border-bottom: #3c7a48 1px solid }
 .footer-widgets { width: 100%; padding: 20px 0; overflow: hidden;}
 .footer-widgets ul{ width: 1000px; margin: auto; line-height: 30px }
 
-/*widget*/
-.widget_archive,.widget_categories,.widget_meta, .widget_nav_menu, .widget_pages, .widget_recent_comments, .widget_recent_entries,.widget_rss {width: 333px; float: left;}
-a{color:#FFF;}
-a:hover, a.current{border:1px solid #FFBB76;color:#559664;font-weight:bolder}
-.widget_archive,.widget_categories,.widget_meta, .widget_nav_menu, .widget_pages, .widget_recent_comments, .widget_recent_entries, .widget_rss h2{ color:#d2ec40; font-size:16px; font-weight:bold}
-.widget_calendar .calendar_wrap {width: 333px; float: left;}
-.widget_calendar .calendar_wrap a{color:#559765;}
-.widget_calendar .calendar_wrap table{margin: auto;}
-.widget_calendar .calendar_wrap caption{ color:#d2ec40; font-size:14px; font-weight:bold}
-.widget_calendar .calendar_wrap tr{border-bottom:#fff solid 1px;}
-.widget_calendar .calendar_wrap td{width: 30px}
-.widget_search {width: 333px; float: left;}
-.widget_search h2{ color:#d2ec40; font-size:20px; font-weight:bold}
-.widget_search input[type="text"]{height:36px;border:1px solid #226039;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;color:#559664;text-decoration:none;line-height:36px;margin:2px;padding:3px 8px}
-.widget_search input[type="submit"]{height:44px;border:1px solid #226039;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;color:#559664;text-decoration:none;line-height:36px;margin:2px;padding:3px 8px}
-
 /*footer*/
 footer{ background:#032e13; height:56px; line-height:56px;}
 footer p{ width:1000px; margin:auto; text-align:center;color:#559664 }
@@ -107,7 +91,10 @@ footer p a:hover{ text-decoration:underline}
 /*single*/
 .single_content { width: 100%; background: #559664; padding: 20px 0; overflow: hidden; min-height:472px;}
 .main { width: 1000px; margin: auto; line-height: 24px }
-.single_entry {width: 60%; margin: 5px; background: #fff; color: #000; float: left; padding: 20px; border-radius: 6px; position: relative; box-shadow: inset #226039 -1px -1px 1px; }
+.main_left {width: 65%; float:left}
+.main_right {width: 30%; height: 100%; float:left}
+.side_bar   {height:93.2%; margin: 5px; background: #fff; color: #000; float: left; padding: 20px; border-radius: 6px; position: relative; box-shadow: inset #226039 -1px -1px 1px; }
+.single_entry {width: 93.3%; margin: 5px; background: #fff; color: #000; float: left; padding: 20px; border-radius: 6px; position: relative; box-shadow: inset #226039 -1px -1px 1px; }
 .single_entry h2 {text-align: center;line-height: 40px}
 .single_entry p {margin-bottom:10px;}
 .single_entry a:hover {color:#000;background:#358BFA;text-decoration:none;}
@@ -211,4 +198,21 @@ a#cancel-comment-reply-link:hover{background:url(images/comment_btn.png) no-repe
 .prev_post						{float:left;width:50%;text-align:left;}
 .next_post						{float:right; width:50%; text-align:right;}
 
-.side_bar   {width: 20%;margin: 5px; background: #fff; color: #000; float: left; padding: 20px; border-radius: 6px; position: relative; box-shadow: inset #226039 -1px -1px 1px; }
+
+/*widget*/
+.widget_div {width: 33% ; float: left}
+.widget_archive,.widget_categories,.widget_meta, .widget_nav_menu, .widget_pages, .widget_recent_comments, .widget_recent_entries,.widget_rss {width: 100%; float: left;font-size: 14px}
+.widget_archive ul,.widget_categories ul,.widget_meta ul, .widget_nav_menu ul, .widget_pages ul, .widget_recent_comments ul, .widget_recent_entries ul,.widget_rss ul{width: 100%;padding-left:30px;}
+.widget_archive a:hover,.widget_categories a:hover,.widget_meta a:hover, .widget_nav_menu a:hover, .widget_pages a:hover, .widget_recent_comments a:hover, .widget_recent_entries a:hover,.widget_rss a:hover{color:#FFF;background:#358BFA;text-decoration:none;}
+.widget_archive a.current,.widget_categories a.current,.widget_meta a.current, .widget_nav_menu a.current, .widget_pages a.current, .widget_recent_comments a.current, .widget_recent_entries a.current,.widget_rss a.current{color:#FFF;background:#358BFA;text-decoration:none;}
+.widget_archive h2,.widget_categories h2,.widget_meta h2, .widget_nav_menu h2, .widget_pages h2, .widget_recent_comments h2, .widget_recent_entries h2, .widget_rss h2{ color:#d2ec40; font-size:20px; font-weight:bold;text-shadow: #fff 1px 1px 0px; line-height:26px; text-align:center;padding-bottom:10px;}
+.widget_calendar .calendar_wrap {width: 100%; float: left;}
+.widget_calendar .calendar_wrap a{color:#559765;}
+.widget_calendar .calendar_wrap table{margin: auto;}
+.widget_calendar .calendar_wrap caption{ color:#d2ec40; font-size:14px; font-weight:bold}
+.widget_calendar .calendar_wrap tr{border-bottom:#fff solid 1px;}
+.widget_calendar .calendar_wrap td{width: 30px}
+.widget_search {width: 100%; float: left;color:#d2ec40; }
+.widget_search h2{ color:#d2ec40; font-size:20px; font-weight:bold;text-shadow: #fff 1px 1px 0px; line-height:26px; text-align:center;padding-bottom:10px;}
+.widget_search input[type="text"]{height:20px;border:1px solid #226039;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;color:#559664;text-decoration:none;line-height:36px;margin:2px;padding:3px 8px}
+.widget_search input[type="submit"]{height:28px;border:1px solid #226039;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;color:#559664;text-decoration:none;line-height:20px;margin:2px;padding:3px 8px}

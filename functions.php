@@ -296,31 +296,11 @@ set_post_thumbnail_size(300, 430, true); // 图片宽度与高度
 
 //注册小工具栏
 register_sidebar(array(
-    'name' => '位于页脚的小工具一',
+    'name' => '位于页脚的小工具',
     'id' => 'footer-1',
-    'description' => '第一个小工具区域',
-    'before_widget' => '<div id="%1$s" class="%2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h2>',
-    'after_title' => '</h2>',
-));
-
-register_sidebar(array(
-    'name' => '位于页脚的小工具二',
-    'id' => 'footer-2',
-    'description' => '第二个小工具区域',
-    'before_widget' => '<div id="%1$s" class="%2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h2>',
-    'after_title' => '</h2>',
-));
-
-register_sidebar(array(
-    'name' => '位于页脚的小工具三',
-    'id' => 'footer-3',
-    'description' => '第三个小工具区域',
-    'before_widget' => '<div id="%1$s" class="%2$s">',
-    'after_widget' => '</div>',
+    'description' => '小工具区域',
+    'before_widget' => '<div class="widget_div"><div id="%1$s" class="%2$s">',
+    'after_widget' => '</div></div>',
     'before_title' => '<h2>',
     'after_title' => '</h2>',
 ));

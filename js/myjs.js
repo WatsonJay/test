@@ -18,6 +18,15 @@ jQuery(document).ready(function($){
         });
     });
 
+    window.onload=window.onresize=function(){
+        if(document.getElementById("main_right").clientHeight<document.getElementById("main_left").clientHeight){
+            document.getElementById("main_right").style.height=document.getElementById("main_left").offsetHeight+"px";
+        }
+        else{
+            document.getElementById("main_left").style.height=document.getElementById("main_right").offsetHeight+"px";
+        }
+    }
+
     $(function () {
         $('img').hover(
             function() {$(this).fadeTo("fast", 0.8);},
