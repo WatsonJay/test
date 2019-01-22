@@ -11,8 +11,23 @@
     <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
     <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+    <!--------载入常用JS---------------->
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/comments-ajax.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/myjs.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/modernizr.js"></script>
+    <!--------添加划动评论----------------->
+    <?php if ( is_singular() && !is_user_logged_in() ){ ?>
+    <script src="<?php bloginfo('template_url'); ?>/js/QapTcha.jquery.js"></script><!---划动回复的插件----->
+    <script src="<?php bloginfo('template_url'); ?>/js/jquery.ui.touch.js"></script><!--划动回复的插件----->
+    <script src="<?php bloginfo('template_url'); ?>/js/jquery-ui.js"></script><!---划动回复的插件---->
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/QapTcha.jquery.css" type="text/css" /><!---划动回复的CSS---->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".QapTcha").QapTcha({disabledSubmit:true});
+            });
+        </script>
+    <?php } ?>
     <?php wp_get_archives('type=monthly&format=link'); ?>
     <?php //comments_popup_script(); // off by default?>
 </head>

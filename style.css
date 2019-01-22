@@ -105,12 +105,110 @@ footer p a{color:#559664}
 footer p a:hover{ text-decoration:underline}
 
 /*single*/
-.single_content { width: 100%; background: #559664; padding: 20px 0; overflow: hidden; min-height:472px }
-.single_content ul { width: 1000px; margin: auto; line-height: 24px }
-.single_entry {width: 60%; margin: 5px; background: #fff; color: #FFF; float: left; padding: 20px; border-radius: 6px; position: relative; box-shadow: inset #226039 -1px -1px 1px; text-shadow: #226039 1px 1px 0px }
+.single_content { width: 100%; background: #559664; padding: 20px 0; overflow: hidden; min-height:472px;}
+.main { width: 1000px; margin: auto; line-height: 24px }
+.single_entry {width: 60%; margin: 5px; background: #fff; color: #000; float: left; padding: 20px; border-radius: 6px; position: relative; box-shadow: inset #226039 -1px -1px 1px; }
+.single_entry h2 {text-align: center;line-height: 40px}
 .single_entry p {margin-bottom:10px;}
+.single_entry a:hover {color:#000;background:#358BFA;text-decoration:none;}
+.single_entry a{color:#000;}
 .single_entry ol {padding-left:15px;margin-bottom:15px;}
 .single_entry ol li {list-style:decimal;}
 .single_entry ul {padding-left:15px;margin-bottom:15px;}
 .single_entry ul li {list-style:disc;}
 .single_entry img	{max-width:380px;height:auto;width:expression(this.width > 380 ? "380px" : this.width); /**用来在IE中自动缩放这里用来缩小首页面的图片的。**/}
+.post-info-right	{float:right;}
+.copyright {text-align:center;padding:10px;display:block;margin-top:15px;}
+
+/*
+	Comments
+--------------------------------------------------*/
+#comments						{width:100%;text-align:left;}
+#comments ol li					{float:left;border-top:1px solid #CCC;padding-top:4px;width:100%;position:relative;background:white;}/*单条回复包含副回复*/
+#commentlist					{width:96%;font-style:normal;color:#454545;}
+#commentlist p					{padding:6px 0;clear:both;}
+#commentlist li.comment			{list-style:none;background:#FFFEFE;margin-bottom:16px;}/*单条回复的主回复*/
+.comment-author img				{float:left;width:36px;height:36px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    -moz-box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.comment-meta					{right:30px;top:12px;float: right}
+.floor a						{float:right;font-size:12px;color:#D14836;}
+.fn								{float:left;margin-left:6px;}
+.fn a							{font-style:normal;}
+.says							{display:none;}
+.reply a:hover					{background:#666;color:white;text-decoration:none;}
+
+#comments ol li ul li.comment 			{width:100%;border-top:1px dotted #CCC;padding:6px 0;margin-top:6px;margin-bottom:0;} /*回复的回复*/
+#commentlist li.comment ul.children div.comment-author img{width:24px;height:24px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    -moz-box-shadow:1px 1px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+#commentlist li.comment ul.children div .comment-body{padding-left:34px;}/*回复内容*/
+#commentlist li.comment ul.children div .floor a{font-size:12px;color:#BBB;text-decoration:none;}
+/* 回复导航 */
+.comments-title					{float:left;font-size:14px;color:#454545;font-family:Microsoft Yahei,黑体;text-shadow:2px 2px 0px #DDD;}/*有多少人评论文章*/
+.comments-nav-wrap				{float:left;background:#FBFAFA;border-top:1px solid #CCC;padding:12px 0;width:100%;margin-bottom:16px;}
+.bottom-comments-nav-wrap		{float:left;width:100%;padding:12px 0;}
+span.bottom-act					{float:left;}
+span.no-comment-title			{float:left;width:100%;font-size:40px;padding:20px 0;color:#DDD;background:#FBFAFA;text-align:center;margin-bottom:16px;border-top:1px solid #CCC;border-bottom:1px solid #CCC;font-family:Microsoft Yahei,黑体;text-shadow:2px 2px 0px #FFF;}/*当没有评论的时候显示的文字*/
+#comments-nav					{float:right;margin-right:10px;font-size:12px;}
+#comments-nav a					{margin-right:2px;text-decoration:none;color:#454545;padding:0.1em 0.4em;border:1px solid #EBEBEB; *line-height:26px;}
+#comments-nav a:hover			{border:1px solid #CCC;background:#FFF;}
+.page-numbers.current			{padding:0.1em 0.4em;background:#666;color:#FFF;border:1px solid #666;}
+
+/*
+	Respond Area
+--------------------------------------------------*/
+.respond-area					{float:left;width:100%;margin-top:16px;background:#FFFEFE;}
+#respond 						{float:left;width:100%;padding:10px 0;}
+.respond-avatar					{float:left;width:36px;margin-right:8px;}
+.respond-avatar img				{background:#EBEBEB;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+.respond-welcome				{float:left;width:515px;height:50px;border-bottom:1px solid #CCC;}
+
+/* Comment Tools */
+#commentnum						{font-family:Georgia;font-size:18px;font-style:normal;}
+#moreSmile						{float:left;width:100%;padding:8px 0;line-height:16px;}
+
+/* Respond textarea */
+#comment-author-info			{float:left;width:100%;}
+#commentform p 					{margin:5px 0;color: #454545;}
+#commentform label 				{color:#666;}
+#commentform 					{width:100%;color:#666;}
+#commentform input 				{width:200px;margin:5px 5px 1px 0;padding:10px;border:1px solid #CCC;}
+#commentform input:focus {
+    -moz-box-shadow:inset 0px 2px 2px #DDD;
+    -webkit-box-shadow:inset 0px 2px 2px #DDD;
+    box-shadow:inset 0px 2px 2px #DDD;
+}
+#commentform #author 			{background:url("images/comment-user.png") no-repeat 0px 0px;padding: 4px 4px 4px 20px;}
+#commentform #email 				{background:url("images/comment-user.png") no-repeat 0px -24px;padding: 4px 4px 4px 20px;}
+#commentform #url 				{background:url("images/comment-user.png") no-repeat 0px -47px;padding: 4px 4px 4px 20px;}
+#respond textarea 					{width:100%;height:90px;border:1px solid #CCC;background:url("images/comment-bg.gif") no-repeat center center transparent;}
+#respond textarea:focus			{
+    -moz-box-shadow:inset 0px 2px 2px #DDD;
+    -webkit-box-shadow:inset 0px 2px 2px #DDD;
+    box-shadow:inset 0px 2px 2px #DDD;
+}
+input#submit						{float:left;width:66px;height:24px;cursor:pointer;border:none;bold;background:url(images/comment_btn.png) no-repeat 0px 0;}
+input#submit:hover				{background:url(images/comment_btn.png) no-repeat -72px 0;}
+a#cancel-comment-reply-link		{float:left;width:66px;cursor:pointer;border:none;height:24px;position:relative;top:5px;background:url(images/comment_btn.png) no-repeat 0px -26px;}
+a#cancel-comment-reply-link:hover{background:url(images/comment_btn.png) no-repeat -72px -26px;}
+/* 上一篇下一篇 */
+.post_nav						{float:left;width:100%;padding:10px 0;background:#FBFAFA;}
+.prev_post						{float:left;width:50%;text-align:left;}
+.next_post						{float:right; width:50%; text-align:right;}
+
+.side_bar   {width: 20%;margin: 5px; background: #fff; color: #000; float: left; padding: 20px; border-radius: 6px; position: relative; box-shadow: inset #226039 -1px -1px 1px; }

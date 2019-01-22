@@ -1,0 +1,48 @@
+/*****************/
+/** QapTcha CSS **/
+/*****************/
+.QapTcha {
+	float:left;
+	margin-top:10px;
+}
+.QapTcha .clr{clear:both}
+
+.QapTcha #bgSlider {
+	width:202px;
+	height:22px;
+	background:transparent url('../images/sprites.png') no-repeat 0 -22px;
+	float:left;
+}
+
+.QapTcha #Slider {
+	width:48px;
+	height:22px;
+	background:transparent url('../images/sprites.png') no-repeat -32px 0;
+	cursor:e-resize;
+}
+
+.QapTcha #Icons {
+	float:left;
+	width:16px;
+	height:16px;
+	background:transparent url('../images/sprites.png') no-repeat 0 0;
+	margin-top:3px;
+	margin-left:10px;
+}
+
+.QapTcha #TxtStatus {
+	float:left;
+	padding-left:6px;
+	margin-top:4px;
+	font-family:Verdana;
+	font-size:12px;
+	color:#999;
+}
+
+/** States **/
+.QapTcha .dropSuccess {
+	color:#568E2F;
+}
+.QapTcha .dropError {
+	color:#bb2828;
+}

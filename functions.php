@@ -324,7 +324,38 @@ register_sidebar(array(
     'before_title' => '<h2>',
     'after_title' => '</h2>',
 ));
+
+register_sidebar(array(
+    'name' => '侧边栏',
+    'id' => 'sidebar-1',
+    'description' => '侧边栏小工具区域',
+    'before_widget' => '<div id="%1$s" class="%2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2>',
+    'after_title' => '</h2>',
+));
 //END-----------------------------
+
+/* 头像缓存功能Mini Gavatar Cache by Willin Kan. */
+function my_avatar( $email, $size = '42', $default = '', $alt = false ) {
+    $alt = (false === $alt) ? '' : esc_attr( $alt );
+    $f = md5( strtolower( $email ) );
+    $w = get_bloginfo('wpurl');
+    $a = $w. '/avatar/'. $f. '.jpg';
+    $e = ABSPATH. 'avatar/'. $f. '.jpg';
+    $t = 1209600; //設定14天, 單位:秒
+    if ( empty($default) ) $default = $w. '/avatar/default.png';
+    if ( !is_file($e) || (time() - filemtime($e)) > $t ){ //當頭像不存在或文件超過14天才更新
+        $r = get_option('avatar_rating');
+        $g = sprintf( "http://%d.gravatar.com", ( hexdec( $f{0} ) % 2 ) ). '/avatar/'. $f. '?s='. $size. '&d='. $default. '&r='. $r;
+//copy($g, $e);
+    }
+//if (filesize($e) < 500) copy($default, $e);
+    $avatar = "<img title='{$alt}' alt='{$alt}' src='{$a}' class='avatar avatar-{$size} photo' height='{$size}' width='{$size}' />";
+    return apply_filters('my_avatar
+', $avatar, $email, $size, $default, $alt);
+}
+// -- END ----------------------------------------
  ?>
 
 
